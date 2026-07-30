@@ -135,7 +135,7 @@
         
         /* Philosophy highlight */
         .philosophy-quote {
-            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            background: linear-gradient(135deg, #fef3c7 0%, #ff9ce2 100%);
             padding: 1.5rem;
             border-radius: 8px;
             font-style: italic;
@@ -163,7 +163,8 @@
 
         <section id="about-me">
             <h2>About Me</h2>
-	    <p>My name is Jonathan A. McCormick Jr. I'm 26 at the time of this writing (2026-07-10), and I'm looking for a sweet, beautiful young lady to build a life with in the Free State of New Hampshire someday. I'm currently in Bartlesville, OK, USA.</p>
+        <p>I'm Jonathan: a <span id="age">26</span>-years-old man looking for a sweet, ethical, and beautiful young lady to build a life with in the Free State of New Hampshire someday. I currently live in Bartlesville, OK, USA.</p>
+
         <img src="/static/mirror.webp" alt="Jonathan in front of the mirror">
             <p>I work in tech and believe in liberty, health, and building a future worth living for. I prioritize whole foods, avoid all recreational drugs, get my beauty sleep, and do lots of pushups every day.</p>
             
@@ -175,7 +176,7 @@
             
             <div class="lifestyle-grid">
                 <div class="lifestyle-item"><strong>🥦 Whole Foods</strong>prioritized at every meal</div>
-                <div class="lifestyle-item"><strong>😴 Beauty Sleep</strong>bedtime: 20:00</div>
+                <div class="lifestyle-item"><strong>😴 Beauty Sleep</strong>8-9 hours every night</div>
                 <div class="lifestyle-item"><strong>💪 Pushups</strong>every day</div>
                 <div class="lifestyle-item"><strong>🏷️ Frugal Living</strong> "quality" and "repairable" over "cheap" and "replaceable"</div>
                 <div class="lifestyle-item"><strong>📚 Bookworm</strong>both a reader and an author</div>
@@ -250,7 +251,7 @@
             <h2>If This Resonates</h2>
 		<p><strong>Call/text/Signal:</strong> Nine1Eight EightEight6 0Two0Two.
 		<p><strong>Send an email:</strong> mccormick9 [at] pm [dot] me.</p>
-		<p>If physical mail is more your thing, <strong>send correspondence:</strong> "PO Box 8 Bartlesville, OK 74005-0008". 
+		<p><strong>Send physical mail</strong> "PO Box 8 Bartlesville, OK 74005-0008"</p> 
     <img src="/static/red.webp" alt="Jonathan posing after giving blood">
         </section>
 
@@ -271,5 +272,21 @@
             <p>Secured with TLS • Liberty • Health • Love</p>
         </footer>
     </div>
+    <script>
+function calculateAge(dob) {
+    const today = new Date();
+    let age = today.getFullYear() - dob.getFullYear();
+    const monthDiff = today.getMonth() - dob.getMonth();
+    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < dob.getDate())) {
+        age--;
+    }
+    return age;
+}
+
+// Set your date of birth here (YYYY, MM-1, DD) — MM is 0-indexed
+const dob = new Date(1999, 8, 6); // Example: January 1, 2000
+document.getElementById('age').textContent = calculateAge(dob);
+</script>
+
 </body>
 </html>
